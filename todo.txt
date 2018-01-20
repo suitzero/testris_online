@@ -1,0 +1,22 @@
+TODO:
+signin page
+signin webapi
+running mongodb on kubernetes
+saving sigin info to mongodb
+login page
+jwt wrapper
+loading sign info
+creating aws account for kops
+
+DONE:
+installing aws cli
+installing kops
+installing kubectl
+
+
+
+how to build a complex software
+1. break down
+2. spend time on it regularly
+
+
