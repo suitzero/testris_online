@@ -1,4 +1,5 @@
 TODO:
+investigate how to connect to mongodb from webapp (credential?)
 signin page
 signin webapi
 running mongodb on kubernetes
