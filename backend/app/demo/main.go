@@ -28,7 +28,8 @@ func main() {
 	session, err := mgo.Dial(url)
 	defer session.Close()
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 	c := session.DB(Database).C(Collection)
 
@@ -43,7 +44,8 @@ func main() {
 
 	err = c.EnsureIndex(index)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 
 	// Insert Datas
@@ -51,14 +53,16 @@ func main() {
 		&Person{Name: "Cla", Phone: "+66 33 1234 5678", Timestamp: time.Now()})
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 
 	// Query One
 	result := Person{}
 	err = c.Find(bson.M{"name": "Ale"}).Select(bson.M{"phone": 0}).One(&result)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 	fmt.Println("Phone", result)
 
